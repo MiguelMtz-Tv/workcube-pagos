@@ -1,0 +1,62 @@
+<app-page-title title="Realizar pago" />
+<div class="p-4">
+  <div class="bg-white w-3/4 relative flex flex-col flex-auto rounded shadow-md overflow-hidden max-[1200px]:w-full m-auto">
+    <h2 class="text-lg font-bold px-8 pt-8 pb-2 -mb-8">Informacion de la cuenta</h2>
+    <p class="text-sm text-gray-600 px-8 py-8 -mb-8">Ingrese la informacion de su cuenta para proceder</p>
+    <form>
+      <div class="flex max-[768px]:flex-wrap">
+        <div class="flex flex-col w-1/2 max-[768px]:w-full mb-8 mr-6 p-8">
+          <div class="flex w-full flex-col px-4 mt-3">
+            <label class="mb-2" for="nombre">Numero de tarjeta:</label>
+            <input id="nombre" type="text" class="border border-gray-300 rounded-md p-1 py-2 flex flex-auto"
+              placeholder="Escribe el numero de tarjeta" />
+          </div>
+          <div class="flex w-full flex-col px-4 mt-3">
+            <label class="mb-2" for="apellido-paterno">Nombre y apellido:</label>
+            <input id="apellido-paterno" type="text" class="border border-gray-300 rounded-md px-1 py-2 flex flex-auto"
+              placeholder="Escribe tu nombre y apellidos" />
+          </div>
+          <div class="flex max-[1000px]:flex-wrap">
+            <div class="flex w-full flex-col px-4 mt-3">
+              <label class="mb-2" for="apellido-paterno">Fecha de vencimiento:</label>
+              <input id="apellido-paterno" type="text"
+                class="border border-gray-300 rounded-md px-1 py-2 flex flex-auto" placeholder="DD/YY" />
+            </div>
+            <div class="flex w-full flex-col px-4 mt-3">
+              <label class="mb-2" for="apellido-paterno">Numero de seguridad:</label>
+              <input id="apellido-paterno" type="text"
+                class="border border-gray-300 rounded-md px-1 py-2 flex flex-auto" placeholder="CVV" />
+            </div>
+          </div>
+
+        </div>
+        <div class="w-1/2 max-[768px]:w-full">
+          <div class="px-6 py-6 lg:px-8">
+            <h3 class="mb-4 text-xl text-center font-semibold text-gray-900 dark:text-white">Servicio 1</h3>
+            <div class="space-y-6">
+              <div class="p-4 border border-zinc-300 rounded-md mb-4">
+                <div class="flex w-full justify-between">
+                  <span>Servicio:</span>
+                  <span>5000MXN</span>
+                </div>
+                <div class="flex w-full justify-between">
+                  <span>Descuento:</span>
+                  <span>500MXN</span>
+                </div>
+                <div class="flex w-full justify-between">
+                  <span>Total:</span>
+                  <span>4500MXN</span>
+                </div>
+              </div>
+              <app-cupons-form />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t-2 border-zinc-200 flex p-4 pr-3 pb-3 justify-end">
+        <button class="px-3 py-1 mr-4 border border-zinc-300 rounded text-indigo-600 font-semibold text-sm">Realizar
+          pago</button> input dagre
+      </div>
+    </form>
+  </div>
+</div>
