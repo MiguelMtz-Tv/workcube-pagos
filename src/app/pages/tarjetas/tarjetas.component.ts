@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-tarjetas',
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./tarjetas.component.css']
 })
 export class TarjetasComponent implements OnInit {
-  constructor(private dataService: DataService){}
+  constructor(private dataService: DataService, private toast: HotToastService){}
 
   cards = [
     {
@@ -60,7 +61,11 @@ export class TarjetasComponent implements OnInit {
     }
     this.cards.push(data)
     this.closeModal()
-    console.log(lastFour)
+    this.toast.success('Tarjeta añadida',{
+      style: {
+        margin: '90px'
+      }
+    })
   }
 
   ngOnInit(): void {

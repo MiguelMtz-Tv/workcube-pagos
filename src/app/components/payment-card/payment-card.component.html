@@ -2,34 +2,23 @@
     <img class="w-24 object-cover rounded-l-md max-sm:hidden" draggable="false"
         src="https://hoydirectorio.com/wp-content/uploads/cache/images/bbva-bancomer-queretaro-corregidora-hoy-directorio-qro/bbva-bancomer-queretaro-corregidora-hoy-directorio-qro-3255170922.jpg">
     <div class="flex flex-col flex-grow rounded-r-md p-3">
-        <span class="text-lg font-semibold leading-tight">Terminación {{finishedIn}}</span>
+        <span class="text-lg mb-2 leading-tight">Terminación {{finishedIn}}</span>
         <span class="text-sm text-secondary text-zinc-700">{{owner}}</span>
         <span class="text-sm text-secondary mt-4 text-zinc-700">Vencimiento: {{expiration | mask: '00/00'}}</span>
     </div>
     <div class="flex p-2 relative">
         <app-dropdown>
-            <button class="button-name">
+            <button class="button-name" [matMenuTriggerFor]="menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 hover:bg-zinc-200 rounded-full transtion duration-200">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                 </svg>
             </button>
-            <div
-                class="dropdown-body z-10 absolute max-sm:right-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-32">
-                <ul class="py-2 text-sm text-gray-700">
-                    <li>
-                        <a class="flex px-4 py-2 hover:bg-gray-100 w-32 button-name cursor-pointer" (click)="openEditModal()">
-                            Editar
-                        </a>
-                    </li>
-                    <li>
-                        <a class="flex px-4 py-2 hover:bg-gray-100 w-32 button-name cursor-pointer" (click)="openDeleteModal()">
-                            Eliminar
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openEditModal()">Editar</button>
+                <button mat-menu-item (click)="openDeleteModal()">Eliminar</button>
+            </mat-menu>
         </app-dropdown>
     </div>
 </div>
@@ -39,7 +28,7 @@
     <a #editModal class="button-name hidden">
         Editar
     </a>
-    <div class="modal-body">
+    <div class="modal-body pt-6">
         <form [formGroup]="form" (ngSubmit)="onSubmit(id)" class="flex justify-center flex-col w-full">
             <mat-form-field class="my-2">
                 <mat-label>Cambiar fecha de vencimiento</mat-label>

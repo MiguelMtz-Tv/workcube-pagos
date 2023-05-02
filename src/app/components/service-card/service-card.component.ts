@@ -47,12 +47,12 @@ export class ServiceCardComponent implements OnInit, OnChanges{
       this.canPay = false
       this.toast.success('Servicio cancelado', {
         style: {
-          margin: '75px'
+          margin: '90px'
         },
         iconTheme: {
           primary: '#5e15c2',
           secondary: '#fff',
-      }
+        }
     })
     }
   }

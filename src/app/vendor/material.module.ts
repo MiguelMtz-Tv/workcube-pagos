@@ -4,7 +4,8 @@ import { TextFieldModule } from '@angular/cdk/text-field'
 import { MatInputModule } from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatTabsModule} from '@angular/material/tabs'; 
-import {MatMenuModule} from '@angular/material/menu'; 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion'; 
 
 @NgModule({
     imports:[
@@ -14,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
         BrowserAnimationsModule,
         MatTabsModule,
         MatMenuModule,
+        MatExpansionModule,
     ],
     exports:[
         MatButtonModule,
@@ -22,6 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
         BrowserAnimationsModule,
         MatTabsModule,
         MatMenuModule,
+        MatExpansionModule,
     ]
 })
 

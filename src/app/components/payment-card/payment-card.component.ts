@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-payment-card',
@@ -17,7 +18,7 @@ export class PaymentCardComponent {
   @ViewChild('editModal') editModal: ElementRef | undefined;
   @ViewChild('deleteModal') deleteModal: ElementRef | undefined;
 
-  constructor(private dataService: DataService){
+  constructor(private dataService: DataService, private toast: HotToastService){
     this.finishedIn = '';
     this.owner = '';
     this.expiration = '';
@@ -39,6 +40,15 @@ export class PaymentCardComponent {
 
   deleteCard(id : any){
     this.dataService.setPaymentCardId(id);
+    this.toast.success('Tarjeta eliminada',{
+      style: {
+        margin: '90px'
+      },
+      iconTheme: {
+        primary: '#E60B5A',
+        secondary: '#fff',
+      }
+    })
   }
 
   //update form:
@@ -55,6 +65,15 @@ export class PaymentCardComponent {
     } 
     this.dataService.setPaymentCardNewData(data)
     this.dataService.setModalClose('close')
+    this.toast.success('Tarjeta actualizada',{
+      style: {
+        margin: '90px'
+      },
+      iconTheme: {
+        primary: '#5e15c2',
+        secondary: '#fff',
+      }
+    })
   }
   //
 }
