@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AddCardComponent } from 'src/app/components/dialogs/add-card/add-card.component';
+import { ConfirmarPagoComponent } from 'src/app/components/dialogs/confirmar-pago/confirmar-pago.component';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./pagar.component.css']
 })
 export class PagarComponent implements OnInit {
+  selectedCard: string = '5771'
 
   constructor(private dialog: MatDialog, private dataService: DataService){ }
 
@@ -44,6 +46,14 @@ export class PagarComponent implements OnInit {
       exitAnimationDuration
     })
   }
+  confirmPay(enterAnimationDuration: string, exitAnimationDuration: string): void{
+    this.dialog.open(ConfirmarPagoComponent,{
+      width: '90%',
+      maxWidth: '500px',
+      enterAnimationDuration,
+      exitAnimationDuration
+    })
+  }
 
   ngOnInit() {
     this.dataService.getCardDataService().subscribe((form)=>{
@@ -58,5 +68,9 @@ export class PagarComponent implements OnInit {
       }
       this.cards.push(data);
     })
+  }
+
+  selectCard(lastFour: string){
+    this.selectedCard = lastFour
   }
 }

@@ -4,11 +4,11 @@
     <mat-card class="p-4">
       <mat-card-header>
         <div class=" w-full mb-4">
-          <p class="text-lg text-zinc-700">Metodo de pago seleccionado: Terminada en <span class="font-semibold">1234</span></p>
+          <p class="text-lg text-zinc-700">Metodo de pago seleccionado: Terminada en <span class="font-semibold">{{selectedCard}}</span></p>
         </div>
       </mat-card-header>
 
-      <mat-radio-button *ngFor="let card of cards" value="radio{{card.id}}" class="w-full">
+      <mat-radio-button *ngFor="let card of cards" value="radio{{card.id}}" class="w-full" (click)="selectCard(card.lastFour)">
         <div class="flex p-4 rounded border w-[500px] my-2 cursor-pointer transition duration-150 hover:bg-zinc-100">
           <div class="w-3/4">
             <div class="text-lg">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="mt-6 w-full flex justify-center">
-        <button mat-flat-button color="primary" class="w-full">Pagar</button>
+        <button mat-flat-button color="primary" class="w-full" (click)="confirmPay('150ms', '150ms')">Pagar</button>
       </div>
     </mat-card>
     <div class="mt-2">

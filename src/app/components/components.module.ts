@@ -12,6 +12,7 @@ import { ServiceCardComponent } from "./service-card/service-card.component";
 import { LibrariesModule } from "../shared/libraries.module";
 import { MaterialModule } from "../shared/material.module";
 import { AddCardComponent } from './dialogs/add-card/add-card.component';
+import { ConfirmarPagoComponent } from './dialogs/confirmar-pago/confirmar-pago.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AddCardComponent } from './dialogs/add-card/add-card.component';
         PaymentModalComponent,
         ServiceCardComponent,
         AddCardComponent,
+        ConfirmarPagoComponent,
     ],
     imports:[
         CommonModule,
