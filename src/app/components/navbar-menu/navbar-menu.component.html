@@ -76,8 +76,8 @@
         [active]="activeLink == link.path">{{link.name}}</a>
         <button mat-tab-link [matMenuTriggerFor]="menu">UserName</button>
         <mat-menu #menu="matMenu">
-            <a mat-menu-item [routerLink]="['/perfil']">Ver perfil</a>
-            <a mat-menu-item [routerLink]="['/']">Cerrar sesión</a>
+            <a mat-menu-item [routerLink]="['/perfil']"><span class="text-sm">Ver perfil</span></a>
+            <a mat-menu-item [routerLink]="['/']"><span class="text-sm">Cerrar sesión</span></a>
         </mat-menu>
     </nav>
 </div>
