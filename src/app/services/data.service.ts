@@ -10,6 +10,7 @@ export class DataService {
   private paymentCardNewData = new Subject<any>()
   private cancelService = new Subject<any>()
   private statusColor = new Subject<any>()
+  private paymentCardData = new Subject<any>()
 
   constructor(){}
 
@@ -43,5 +44,13 @@ export class DataService {
   }
   getCancelService(){
     return this.cancelService.asObservable()
+  }
+
+  //to get data of add card in payment
+  setCardDataService(value: any){
+    this.paymentCardData.next(value)
+  }
+  getCardDataService(){
+    return this.paymentCardData.asObservable()
   }
 }

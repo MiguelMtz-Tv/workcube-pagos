@@ -8,6 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion'; 
 import {MatCardModule} from '@angular/material/card'; 
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio'; 
+import {MatDialogModule} from '@angular/material/dialog'; 
 
 @NgModule({
     imports:[
@@ -20,6 +21,7 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
         MatExpansionModule,
         MatRadioModule,
         MatCardModule,
+        MatDialogModule,
     ],
     exports:[
         MatButtonModule,
@@ -31,6 +33,7 @@ import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio
         MatExpansionModule,
         MatRadioModule,
         MatCardModule,
+        MatDialogModule,
     ],
     providers: [{
         provide: MAT_RADIO_DEFAULT_OPTIONS,

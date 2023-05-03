@@ -12,49 +12,50 @@
       </mat-expansion-panel-header>
       
       <table class="w-full">
-        <thead class="border-b border-zinc-300">
+        <thead>
           <td></td>
           <td></td>
           <td class="px-4">Titular</td>
           <td class="px-4">Vencimiento</td>
         </thead>
-        <tbody>
+        <tbody class="border-b border-t border-zinc-300">
             <tr *ngFor="let card of cards">
               <td><mat-radio-button/></td>
               <td class="p-4">Terminada en {{card.lastFour}}</td>
               <td class="p-4">{{card.owner}}</td>
-              <td class="p-4">{{card.expiration}}</td>
+              <td class="p-4">{{card.expiration | mask: "00/00"}}</td>
             </tr>
         </tbody>
       </table>
 
       <div class="mt-4">
-        <button mat-flat-button color="primary">+ Añadir metodo de pago</button>    
+        <button mat-flat-button color="primary" (click)="addCard('150ms', '150ms')">+ Añadir metodo de pago</button>    
       </div>
     </mat-expansion-panel>
   </div>
 
-  <mat-card class="w-[350px]">
-    <mat-card-header>
-      <mat-card-title>Servicio EOS</mat-card-title>
-    </mat-card-header>
-    <div class="flex flex-col p-4">
-        <div class="flex justify-between mb-2 pt-2 border-t border-zinc-300">
-            <span>Servicio:</span>
+  <div class="mt-[83px]">
+    <mat-card class="w-[350px] h-fit">
+      <mat-card-header>
+        <mat-card-title>Servicio EOS</mat-card-title>
+      </mat-card-header>
+      <div class="flex flex-col p-4">
+          <div class="flex justify-between mb-2 pt-2 border-t border-zinc-300">
+              <span>Servicio:</span>
+              <span>5000MXN</span>
+          </div>
+          <div class="flex justify-between mb-2 pb-2 border-b border-zinc-300">
+            <span>Descuento:</span>
+            <span>0MXN</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Total:</span>
             <span>5000MXN</span>
-        </div>
-        <div class="flex justify-between mb-2">
-          <span>Descuento:</span>
-          <span>0MXN</span>
-        </div>
-        <div class="flex justify-between pb-2 border-b border-zinc-300">
-          <span>Total:</span>
-          <span>5000MXN</span>
-        </div>
-
-      <div class="mt-4">
-        <app-cupons-form></app-cupons-form>
+          </div>
       </div>
+    </mat-card>
+    <div class="mt-2">
+      <app-cupons-form></app-cupons-form>
     </div>
-  </mat-card>
+  </div>
 </div>

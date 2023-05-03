@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { AddCardComponent } from 'src/app/components/dialogs/add-card/add-card.component';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-pagar',
   templateUrl: './pagar.component.html',
   styleUrls: ['./pagar.component.css']
 })
-export class PagarComponent {
+export class PagarComponent implements OnInit {
+
+  constructor(private dialog: MatDialog, private dataService: DataService){ }
+
   cards: any = [
     {
       id: '1',
@@ -29,4 +35,28 @@ export class PagarComponent {
       lastFour: '2213',
     }
   ]
+
+  addCard(enterAnimationDuration: string, exitAnimationDuration: string): void{
+    this.dialog.open(AddCardComponent,{
+      width: '90%',
+      maxWidth: '700px',
+      enterAnimationDuration,
+      exitAnimationDuration
+    })
+  }
+
+  ngOnInit() {
+    this.dataService.getCardDataService().subscribe((form)=>{
+      let newId= this.cards.length + 1
+      let lastFour = form.numTarjeta.slice(form.numTarjeta.length-4)
+      let data = {
+        id: newId,
+        finishedIn: form.numTarjeta,
+        owner: form.nombreTitular,
+        expiration: form.vencimiento,
+        lastFour: lastFour,
+      }
+      this.cards.push(data);
+    })
+  }
 }

@@ -77,7 +77,6 @@ export class TarjetasComponent implements OnInit {
     //edit a card
     this.dataService.getPaymentCardNewData().subscribe((data) => {
       let editIndex = this.cards.findIndex((obj) => obj.id === data.id)
-      /* this.cards[editIndex].owner = data.owner */
       this.cards[editIndex].expiration = data.expiration
     })
   }
