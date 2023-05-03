@@ -9,8 +9,8 @@ import { PageTitleComponent } from "./page-title/page-title.component";
 import { PaymentCardComponent } from "./payment-card/payment-card.component";
 import { PaymentModalComponent } from "./payment-modal/payment-modal.component";
 import { ServiceCardComponent } from "./service-card/service-card.component";
-import { LibrariesModule } from "../vendor/libraries.module";
-import { MaterialModule } from "../vendor/material.module";
+import { LibrariesModule } from "../shared/libraries.module";
+import { MaterialModule } from "../shared/material.module";
 
 
 @NgModule({

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { MainLayoutComponent } from './main-layout/main-layout.component'
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component'
-import { LibrariesModule } from '../vendor/libraries.module'
+import { LibrariesModule } from '../shared/libraries.module'
 import { ComponentsModule } from '../components/components.module'
 
 @NgModule({
