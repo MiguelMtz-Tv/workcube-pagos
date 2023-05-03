@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="w-full text-end">
-            vencimiento: {{card.expiration}}
+            vencimiento: {{card.expiration | mask:'00/00'}}
           </div>
         </div>
       </mat-radio-button>
